@@ -81,5 +81,16 @@ namespace LINQPractice
 
             return sortedByAgeAndName.ToList();
         }
+
+        public static String[] DoubleReverse(List<String> list)
+        {
+            var inenumerable = list as IEnumerable<String>;
+
+            var reversed = inenumerable.Reverse();
+
+            var reversedStrings = reversed.Select(x => new String(x.Reverse().ToArray()));
+
+            return reversedStrings.ToArray();
+        }
     }
 }

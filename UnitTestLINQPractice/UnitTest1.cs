@@ -156,5 +156,17 @@ namespace LINQPractice.Test
 
             CollectionAssert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestDoubleReverse()
+        {
+            var subject = new List<String> { "dod", "bob", "abc", "cba" };
+
+            var expected = new List<String> { "abc", "cba", "bob", "dod" };
+
+            var actual = LINQPractice.Program.DoubleReverse(subject);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
     }
 }
