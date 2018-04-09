@@ -152,7 +152,7 @@ namespace LINQPractice.Test
 
             var expected = new List<User> { user3, user4, user2, user1 };
 
-            var actual = LINQPractice.Program.sortUsersByAge(subject);
+            var actual = LINQPractice.Program.SortUsersByAge(subject);
 
             CollectionAssert.AreEqual(expected, actual);
         }
@@ -165,6 +165,22 @@ namespace LINQPractice.Test
             var expected = new List<String> { "abc", "cba", "bob", "dod" };
 
             var actual = LINQPractice.Program.DoubleReverse(subject);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestTakeSkip()
+        {
+            var subject = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            var take = 2;
+
+            var skip = 1;
+
+            var expected = new List<int> { 2 };
+
+            var actual = LINQPractice.Program.TakeSkip(subject, take, skip);
 
             CollectionAssert.AreEqual(expected, actual);
         }

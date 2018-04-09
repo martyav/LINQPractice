@@ -75,7 +75,7 @@ namespace LINQPractice
             return min;
         }
 
-        public static List<User> sortUsersByAge(List<User> list)
+        public static List<User> SortUsersByAge(List<User> list)
         {
             var sortedByAgeAndName = list.OrderByDescending(x => x.Age).ThenBy(x => x.LastName);
 
@@ -91,6 +91,23 @@ namespace LINQPractice
             var reversedStrings = reversed.Select(x => new String(x.Reverse().ToArray()));
 
             return reversedStrings.ToArray();
+        }
+
+        public static List<int> TakeSkip(List<int> list, int take = 0, int skip = 0)
+        {
+            var copy = list as IEnumerable<int>;
+
+            if (take != 0)
+            {
+                copy = copy.Take(take);
+            }
+
+            if (skip != 0)
+            {
+                copy = copy.Skip(skip);
+            }
+
+            return copy.ToList();
         }
     }
 }
