@@ -123,5 +123,38 @@ namespace LINQPractice.Test
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestOrder()
+        {
+            var user1 = new User();
+            var user2 = new User();
+            var user3 = new User();
+            var user4 = new User();
+
+            user1.Age = 60;
+            user1.FirstName = "A.";
+            user1.LastName = "Redmond";
+
+            user2.Age = 60;
+            user2.FirstName = "B.";
+            user2.LastName = "Bedmond";
+
+            user3.Age = 69;
+            user3.FirstName = "C.";
+            user3.LastName = "Tedmond";
+
+            user4.Age = 64;
+            user4.FirstName = "D.";
+            user4.LastName = "Dedmond";
+
+            var subject = new List<User> { user1, user2, user3, user4 };
+
+            var expected = new List<User> { user3, user4, user2, user1 };
+
+            var actual = LINQPractice.Program.sortUsersByAge(subject);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
     }
 }

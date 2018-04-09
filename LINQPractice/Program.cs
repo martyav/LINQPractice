@@ -74,5 +74,12 @@ namespace LINQPractice
 
             return min;
         }
+
+        public static List<User> sortUsersByAge(List<User> list)
+        {
+            var sortedByAgeAndName = list.OrderByDescending(x => x.Age).ThenBy(x => x.LastName);
+
+            return sortedByAgeAndName.ToList();
+        }
     }
 }
