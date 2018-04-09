@@ -46,5 +46,19 @@ namespace LINQPractice
 
             return foundAllCaps;
         }
+
+        public static int[] FindFirstArrayWithLength(List<int[]> list, int length)
+        {
+            int[] match = list.FirstOrDefault(x => x.Count() > length);
+
+            return match;
+        }
+
+        public static int GetLastOddElement(int[] array)
+        {
+            int match = array.LastOrDefault(x => x % 2 != 0);
+
+            return match;
+        }
     }
 }
