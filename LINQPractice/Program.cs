@@ -25,5 +25,26 @@ namespace LINQPractice
 
             return foundDivisible.ToArray();
         }
+
+        public static bool AnyCapitals(String text)
+        {
+            var foundACapital = text.Any(x => Char.IsUpper(x));
+
+            return foundACapital;
+        }
+
+        public static bool AllCapitals(String text)
+        {
+            List<char> foundLetters = text.Where(x => Char.IsLetter(x)).ToList();
+            
+            if (foundLetters == null || foundLetters.Count == 0)
+            {
+                return false;
+            }
+
+            var foundAllCaps = foundLetters.All(x => Char.IsUpper(x));
+
+            return foundAllCaps;
+        }
     }
 }

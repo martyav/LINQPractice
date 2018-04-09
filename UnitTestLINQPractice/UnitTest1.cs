@@ -30,5 +30,32 @@ namespace LINQPractice.Test
 
             CollectionAssert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestAnyCaps()
+        {
+            var subject1 = "Hello, world";
+            var subject2 = "hello, world";
+
+            var actual1 = LINQPractice.Program.AnyCapitals(subject1);
+            var actual2 = LINQPractice.Program.AnyCapitals(subject2);
+
+            Assert.IsTrue(actual1);
+            Assert.IsFalse(actual2);
         }
+
+        [TestMethod]
+        public void TestAllCaps()
+        {
+            var subject1 = "Hello, world";
+            var subject2 = "HELLLLLLLLLLLLLLOOOOOOOOOOO";
+
+            var actual1 = LINQPractice.Program.AllCapitals(subject1);
+            var actual2 = LINQPractice.Program.AllCapitals(subject2);
+
+            Assert.IsFalse(actual1);
+            Assert.IsTrue(actual2);
+        }
+
+    }
 }
