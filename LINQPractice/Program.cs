@@ -18,5 +18,12 @@ namespace LINQPractice
 
             return incrementedList.ToList();
         }
+
+        public static int[] GetWhereDivisible(List<int> list, int x)
+        {
+            var foundDivisible = list.Where(queried => queried % x == 0);
+
+            return foundDivisible.ToArray();
+        }
     }
 }

@@ -18,5 +18,17 @@ namespace LINQPractice.Test
 
             CollectionAssert.AreEqual(expected, actual);
         }
-    }
+
+        [TestMethod]
+        public void TestGetDivisible()
+        {
+            var subject = new List<int> { 0, 1, 2, 3 };
+
+            var expected = new int[] { 0, 2 };
+
+            var actual = LINQPractice.Program.GetWhereDivisible(subject, 2);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+        }
 }
