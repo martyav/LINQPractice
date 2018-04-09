@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace LINQPractice
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+        }
+
+        public static List<int> Increment(List<int> list)
+        {
+            var incrementedList = list.Select(x => x + 1);
+
+            return incrementedList.ToList();
         }
     }
 }
