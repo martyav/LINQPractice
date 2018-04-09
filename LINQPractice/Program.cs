@@ -60,5 +60,19 @@ namespace LINQPractice
 
             return match;
         }
+
+        public static int GetMaxStringLength(List<String> list)
+        {
+            int longest = list.Max(x => x.Count());
+
+            return longest;
+        }
+
+        public static int GetMinListListValue(List<List<int>> listOLists)
+        {
+            var min = listOLists.Min(x => x.Min());
+
+            return min;
+        }
     }
 }

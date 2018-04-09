@@ -93,5 +93,35 @@ namespace LINQPractice.Test
             Assert.AreEqual(expected1, actual1);
             Assert.AreEqual(expected2, actual2);
         }
+
+        [TestMethod]
+        public void TestGetMinListListValue()
+        {
+            var list1 = new List<int> { 1, 2, 3 };
+            var list2 = new List<int> { 2, 3, 4 };
+            var list3 = new List<int> { 100 };
+            var list4 = new List<int> { 3 };
+            var list5 = new List<int> { 4, 5 };
+
+            var subject = new List<List<int>> { list1, list2, list3, list4, list5 };
+
+            var expected = 1;
+
+            var actual = LINQPractice.Program.GetMinListListValue(subject);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestGetMaxStringLength()
+        {
+            var subject = new List<String> { "a", "abc", "sadf", "crazy" };
+
+            var expected = 5;
+
+            var actual = LINQPractice.Program.GetMaxStringLength(subject);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
